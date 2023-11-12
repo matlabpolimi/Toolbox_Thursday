@@ -1,4 +1,5 @@
 %% Questo codice analizza la risposta in frequenza di un sistema massa-molla-smorzatore al variare del coefficiente di smorzamento c
+
 %TOOLBOX utilizzato --> CONTROL SYSTEM
 %% clc
 close all
@@ -30,17 +31,21 @@ figure;
 subplot(2, 1, 1);
 set(groot,'defaultAxesTickLabelInterpreter','latex');  
 semilogx(w, squeeze(response_mag), 'LineWidth', 1.5);
+ax = gca; % current axes
+ax.FontSize = 24;
 grid on
-title('Ampiezza rispetto alla frequenza per diversi valori di smorzamento','fontsize',14,'interpreter','latex');
-xlabel('Frequenza','fontsize',14,'interpreter','latex');
-ylabel('Ampiezza','fontsize',14,'interpreter','latex');
-legend('c = 0.1', 'c = 0.5', 'c = 1', 'c = 2');
+title('Frequency response','fontsize',28);
+xlabel('Frequency','fontsize',24);
+ylabel('Amplitute','fontsize',24);
+legend('c = 0.1', 'c = 0.5', 'c = 1', 'c = 2','fontsize',24);
 
 % Tracciamento della risposta in frequenza per fase
 subplot(2, 1, 2);
 semilogx(w, squeeze(response_phase), 'LineWidth', 1.5);
+ax = gca; % current axes
+ax.FontSize = 24;
 grid on
-title('Fase rispetto alla frequenza per diversi valori di smorzamento','fontsize',14,'interpreter','latex');
-xlabel('Frequenza','fontsize',14,'interpreter','latex');
-ylabel('Fase (radianti)','fontsize',14,'interpreter','latex');
-legend('c = 0.1', 'c = 0.5', 'c = 1', 'c = 2');
+title('Frequency response','fontsize',28);
+xlabel('Frequency','fontsize',24);
+ylabel('Phase (deg)','fontsize',24);
+legend('c = 0.1', 'c = 0.5', 'c = 1', 'c = 2','fontsize',24);
